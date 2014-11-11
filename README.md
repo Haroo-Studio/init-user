@@ -14,8 +14,8 @@ $ npm install git://github.com/haroo-studio/init-user.git
 #### init database
 
 ```js
-var CouchServerConnector = require('init-user');
-var couchdb = new CouchServerConnector('localhost', '5984', 'admin', 'pass1234');
+var Init = require('init-user').initUserDB;
+var couchdb = new Init('localhost', '5984', 'admin', 'pass1234');
 
 couchdb.createNewAccount('dbname', function(err, res) {
   if (err) {
@@ -29,13 +29,10 @@ couchdb.createNewAccount('dbname', function(err, res) {
 #### init haroo id
 
 ```js
-var CouchServerConnector = require('init-user');
-var database = require('../config/database');
+var Init = require('init-user').initHarooID;
 
-var InitUser = new CouchServerConnector(database.couch.host, database.couch.port, database.couch.id, database.couch.pass);
+var haroo_id = Init('soomtong@gmail.com');
 
-exports.initHarooID = function (email) {
-    return InitUser.createNewAccount(email);
-};
+console.log(haroo_id);
 ```
 
