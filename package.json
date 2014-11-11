@@ -1,11 +1,12 @@
 {
   "name": "init-user",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.1.1",
+  "description": "haroo cloud account core module",
   "main": "index.js",
   "dependencies": {
     "nano": "~5.10.0",
-    "q": "~1.0.1"
+    "q": "~1.0.1",
+    "uuidv5": "0.0.0"
   },
   "devDependencies": {},
   "scripts": {
