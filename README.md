@@ -23,3 +23,15 @@ couchdb.createNewAccount('dbname', function(err, res) {
   console.log(res);
 });
 ```
+
+```js
+var CouchServerConnector = require('init-user');
+var database = require('../config/database');
+
+var InitUser = new CouchServerConnector(database.couch.host, database.couch.port, database.couch.id, database.couch.pass);
+
+exports.initHarooID = function (email) {
+    return InitUser.createNewAccount(email);
+};
+```
+
